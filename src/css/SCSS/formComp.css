@@ -59,7 +59,6 @@ body {
 .formComp .formCompDiv div {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (50%)[2];
       grid-template-columns: repeat(2, 50%);
   row-gap: 0px;
   -webkit-column-gap: 50px;
