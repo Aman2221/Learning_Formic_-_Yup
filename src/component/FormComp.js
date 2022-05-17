@@ -11,6 +11,11 @@ let validationSchema = yup.object().shape({
   skills: yup.array().min(1,'Add at least one skills').max(2,'nt more then two').required('one skill required'),
   date: yup.date().required('date is required'),
   social : yup.object().required('at lest one social profile is required'),
+  additionalInfoFlag : yup.boolean(),
+  additionalInfo : yup.string().when('additionalInfoFlag',{
+      is : true,
+      then : yup.string().required('additional info is required')
+    })
 });
 
 const FormComp = () => {
@@ -24,7 +29,9 @@ const FormComp = () => {
         income:'',
         about : '', 
         social : {facebook : '', twitter : '' },
-        skills : []
+        skills : [],
+        additionalInfoFlag : false,
+        additionalInfo : ''
     }
     return (
         <div className="formComp">
@@ -96,7 +103,14 @@ const FormComp = () => {
                         <Field name='skills[0]' type='text'/>
                         <Field name='skills[1]' type='text'/>
                         <br/><br/>
+                        <label>Additional Info :&nbsp;</label>
                         
+                        <Field name='additionalInfoFlag' type='checkbox'/>
+                        <br/><br/>
+                        {
+                            values.additionalInfoFlag ? <Field name='additionalInfo' type='textarea'/> : null
+                        }
+                        <ErrorMessages name='additionalInfo' />
                         <FieldArray
                             name="friends"
                             render={arrayHelpers => (
