@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+//each import file in SCSS should start with _ to inform compiler to not compile this file.
+@import './variables';  //@import variable or media query files using import feature 
+@import './media';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: $font-family;
+    width: 100%;
+}
+
+//when there is need of using the same again and again in different element we can use SCSS @mixin to @include the code where ever we need
+// @mixin also supports the parameter we can pass the value to the @mixin from element where we include it.
+@mixin flexBox($alignItems, $justifyContent, $flexDirection){
+    display: flex;
+    align-items: $alignItems;
+    flex-direction: $flexDirection;
+    justify-content: $justifyContent;
+}
+@mixin gridBox($row, $column,$width, $rowGap, $columnGap) {
+    display: grid;
+    grid-template-columns: repeat($column, $width);
+    row-gap:$rowGap;
+    column-gap:$columnGap;
+}
+@mixin boxShadow($opacity) {
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, $opacity);
+    transition: 0.3s;
+}
+@mixin buttonCSS($paddingLeft, $paddingRight,$width) {
+    padding-left: $paddingLeft;
+    padding-right: $paddingRight;
+    height: 35px;
+    font-family: $font-family;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 15px;
+    width: $width;
+    cursor: pointer;
+}
+
+@mixin inputCommonCSS(){
+    margin-top: 5px;
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 80%;
+    padding-left: 5px;
+    font-family: $font-family;
+}
+.formComp{
+    @include flexBox($center, $center, column);
+    background-color:$main-bgColor;
+    color : $white-color;
+    height: max-content;
+    padding: 50px;
+    h1{
+        font-weight: 300;
+        margin-bottom: 15px;
+    }
+    .formCompDiv {
+            @include boxShadow(0.1);
+            padding: 20px;
+            width: 90%;
+            div{
+                @include gridBox(1,2,50%,0px, 50px);
+                div {
+                        @include flexBox(flex-start, center, column);
+                        margin-top: 15px;
+                        #fieldArrayDiv {
+                            @include flexBox(center, center, column);
+                        }
+                        div {
+                            
+                            @include flexBox(center, center, row);
+                            width: 350px;
+                            div {
+                                @include flexBox(center, center, row);
+                            }
+                
+                        }
+                
+                        input,
+                        select,
+                        textarea {
+                            @include inputCommonCSS();
+                        }
+                    }
+            }
+            button[type='submit']{
+                @include buttonCSS(20px, 20px, auto)
+            }
+            button[type='button'] {
+                @include buttonCSS(0px, 0px, 300px)
+            }
+        }
+}

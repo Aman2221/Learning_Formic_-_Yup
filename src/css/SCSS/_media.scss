@@ -1,0 +1,10 @@
+@import './variables';
+
+@media screen and (max-width: 468px){
+    .formComp {
+        padding: 10px !important;
+        .formCompDiv {
+            width: 100% !important;
+        }
+    }
+}

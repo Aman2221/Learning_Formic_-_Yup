@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+@media screen and (max-width: 468px) {
+  .formComp {
+    padding: 10px !important;
+  }
+  .formComp .formCompDiv {
+    width: 100% !important;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", serif;
+  width: 100%;
+}
+
+.formComp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #6A67CE;
+  color: #fff;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 50px;
+}
+
+.formComp h1 {
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.formComp .formCompDiv {
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  padding: 20px;
+  width: 90%;
+}
+
+.formComp .formCompDiv div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (50%)[2];
+      grid-template-columns: repeat(2, 50%);
+  row-gap: 0px;
+  -webkit-column-gap: 50px;
+          column-gap: 50px;
+}
+
+.formComp .formCompDiv div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 15px;
+}
+
+.formComp .formCompDiv div div #fieldArrayDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.formComp .formCompDiv div div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 350px;
+}
+
+.formComp .formCompDiv div div div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.formComp .formCompDiv div div input,
+.formComp .formCompDiv div div select,
+.formComp .formCompDiv div div textarea {
+  margin-top: 5px;
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 80%;
+  padding-left: 5px;
+  font-family: "Poppins", serif;
+}
+
+.formComp .formCompDiv button[type='submit'] {
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 35px;
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 15px;
+  width: auto;
+  cursor: pointer;
+}
+
+.formComp .formCompDiv button[type='button'] {
+  padding-left: 0px;
+  padding-right: 0px;
+  height: 35px;
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 15px;
+  width: 300px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=formComp.css.map */
